@@ -147,9 +147,13 @@ $("button").click(function(){
 ```
 ## jQuery - AJAX Introduction
 
+* [AJAX Tutorial Link](https://www.w3schools.com/xml/ajax_intro.asp)
+
 > AJAX = Asynchronous JavaScript and XML.
 
 > AJAX is the art of exchanging data with a server, and updating parts of a web page - without reloading the whole page.
 
 > With the jQuery AJAX methods, you can request text, HTML, XML, or JSON from a remote server using both HTTP Get and HTTP Post - And you can load the external data directly into the selected HTML elements of your web page!
+
+
 
