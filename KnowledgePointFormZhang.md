@@ -62,7 +62,7 @@
     }
 ```
 
-### <font color='aadd'>柱模板：正常格式如下</font>
+### <font color='aadd'>主模板：正常格式如下</font>
 ``` html
 @using Kentico.PageBuilder.Web.Mvc
 <!DOCTYPE html>
@@ -96,4 +96,22 @@
 </body>
 </html>
 ```
+
+### <font color='aadd'>根据路由生成链接</font>
+```
+@Url.RouteUrl("Product", new {guid = Model.ProductPageGUID, productAlias = Model.ProductPageAlias})
+```
+### <font color='aadd'>生成不同尺寸图片，对于生成缩略图有用</font>
+```
+@Html.Image(@Model.ImagePath, @Model.Name, null, SizeConstraint.Size(452, 452))  
+```
+
+### <font color='aadd'>（方便货币切换）商品价格显示：</font>
+```
+String.Format(currency.CurrencyFormatString, price.Price)
+```
+
+可以看下QueryHelper 这个类获取URL参数（view和controller 中都可以用）， 如： @QueryHelper.GetInteger("参数名",默认值)，可以获取不同类型的数据，如@QueryHelper.GetInteger("orderid",0) ,
+
+
 

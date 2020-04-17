@@ -51,3 +51,20 @@ git clone <repo> <directory>
     * 自定义新建项目目录名称<br>
     ``` $ git clone git://github.com/schacon/grit.git <directory> ```
 
+### 检查当前文件状态
+``` shell
+git status
+```
+
+### 跟踪新文件
+``` shell
+git add README
+```
+
+### 状态简览
+```
+git status -s
+```
+
+
+
