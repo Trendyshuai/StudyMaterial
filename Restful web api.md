@@ -1,3 +1,32 @@
+# Web API
+
+* Web API通常是指“使用HTTP协议并通过网络调用的API”,由于它使用了HTTP协议，所以需要通过URI信息来指定端点。
+* Web API就是一个Web系统，通过访问URI可以于其进行信息交互。
+
+Tip:
+    URI 统一资源标识
+    URL 统一资源定位符
+
+## 大多数的Web API并不是RESTful API
+
+* Roy Fielding为REST风格的API指定了一套约束规范或者叫` 架构风格 `
+
+## MVC模式
+
+* MVC 是一种主要用来构建UI的架构模式
+* 松耦合
+* 关注点分离(separation of concerns)
+* MVC不是一个完整的应用程序架构
+
+## 如何MVC映射为API呢
+
+* Model，它负责处理程序数据的逻辑
+* View，它是程序里负责展示数据的那部分。在构建API的时候，View就是数据或资源的展示。现在通常使用JSON格式
+* Controller，它负责View和Model之间的交互
+
+
+
+
 # 2. 对外合约
 
 ## API消费者需要使用到三个概念
@@ -43,6 +72,13 @@
 * 需求：获取所有用户的数量
 * 妥协的做法：GET ` api/users/totalamountofuser `
 
+## [ApiController]
 
-
+* 这个属性是应用于Controller的，它其实并不是强制的。
+* 会启用以下行为：
+  * 要求使用属性路由(Attribute Routing)
+  * 自动HTTP 400响应 (Model错误信息返回400)
+  * 推断参数的绑定源
+  * Multipart/form-data请求推断
+  * 错误状态代码的问题详细信息
 

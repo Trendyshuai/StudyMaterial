@@ -1,0 +1,10 @@
+nodejs 10.9.0 2018-8-25
+npm 6.2.0
+angular 6.1.5
+npm install -g @angular/cli@6.1.5
+ng new blog-client --style scss --dry-run
+
+
+npm install --save @angular/material@6.4.6
+npm install --save @angular/cdk
+npm install --save @angular/animations
