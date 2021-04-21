@@ -82,3 +82,41 @@ Tip:
   * Multipart/form-data请求推断
   * 错误状态代码的问题详细信息
 
+# 内容协商
+
+## Accept Header
+* Media Type（媒体类型）
+  * application/json
+  * application/xml
+  * ...
+* 406 Not Acceptable
+* 输出格式
+* ASP.NET Core里面对应的就是Output Formatters
+
+## Content-Type Header
+* Media Type(媒体类型)
+  * application/json
+  * application/xml
+  * ...
+* 输入格式
+* ASP.NET Core里面对应的就是Input Formmatters
+
+
+# Entity Model VS 面向外部的Model
+
+## Entity Model
+* Entity Framework Core使用的Entity Model是用来标识数据库里面的记录的。
+## 面向外部的Model
+* 而面向外部的model则标识了要传输的东西。这类model有时候叫做Dto，有时候叫做ViewModel。
+
+## Entity Model 和 面向外部的Model应该分开
+* 更佳健壮、可靠和更易于进化。
+
+
+# ActionResult<T>
+返回类型可以用它，可以不用IActionResult
+
+# 添加AutoMapper
+
+## Nuget
+AutoMapper.Extensions.Microsoft.DependencyInjection
