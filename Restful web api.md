@@ -120,3 +120,52 @@ Tip:
 
 ## Nuget
 AutoMapper.Extensions.Microsoft.DependencyInjection
+
+
+# HTTP HEAD
+* HEAD和GET几乎是一样的
+* 知识有一点重要的不同：HEAD的API不应该返回响应的body
+* HEAD可以用来在资源上获取一些信息。
+
+
+# 过滤和搜索
+
+## 如何给api传递数据
+* 数据可以通过多种方式来传给api
+* Binding source Attributes会告诉Model的绑定引擎从哪里找到绑定源。
+
+## Binding source Attributes
+* [FromBody]，请求的Body
+* [FromForm]，请求的Body中的form数据
+* [FromHeader]，请求的Header
+* [FromQuery]，Query string参数
+* [FromRoute]，当前请求中的路由数据
+* [FromService]，作为Action参数而注入的服务
+
+## [ApiController]
+* 默认情况下ASP.NET Core会使用Complex Object Model Binder，它会把数据从Value Providers那里提取出来，而Value Providers的顺序是定义号的。
+* 但是我们构建API时通常会使用[ApiController]这个属性，为了更好的适应API它改变了上面的规则。
+
+## [ApiController]
+* [FromBody] 通常是用来推断复杂类型参数的。
+* [FromForm] 通常用来推断IFormFile和IFormFileCollection类型的Action参数。
+* [FromRoute] 用来推断Action的参数名和路由模板中的参数名一致的情况。
+* [FromQuery] 用来推断其它的Action参数。
+
+## 过滤
+* 过滤集合的意识就是指根据条件信啊顶返回的集合。
+* 例如我想返回所有类型为国有企业的欧洲公司。则URI为：GET/api/companies?type=State-owned$region=Europe
+* 所以过滤就是指：我们把某个字段的名字以及想要让该字段匹配的指一起传递给API，并将这些作为返回的集合的一部分。
+
+## 搜索
+* 针对集合进行搜索是指根据预定义的一些规则，把符合条件的数据添加到集合里面。
+* 搜索实际上超出了过滤的范围。针对搜索，通常不会把要匹配的字段名传递过去，通常会把要搜索的值传递给API，然后API自行决定应该对哪些字段来查找该值。通常会是全文搜索。
+* 例如：GET/api/companies?q=xxx
+
+## 过滤vs搜索
+* 过滤：首先是一个完整的集合，然后根据条件把匹配/不匹配的数据项移除。
+* 搜索：首先是一个空的集合，然后根据条件把匹配/不匹配的数据项往里面添加。
+
+## 注意
+* 过滤和搜索这些参数并不是资源的一部分。
+* 只允许针对资源的字段进行过滤。

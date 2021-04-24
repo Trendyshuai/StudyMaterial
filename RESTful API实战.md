@@ -549,7 +549,9 @@ services.AddControllers(setup =>
 1. 建立Models文件夹
 2. Controller里赋值
 
-# 十一、添加AutoMapper
+# 十一、Action Result<T>
+
+# 十二、添加AutoMapper
 1. Nuget (AutoMapper.Extensions.Microsoft.DependencyInjection)
 2. StartUp里注册
 ``` C#
@@ -578,8 +580,44 @@ public async Task<ActionResult<IEnumerable<BookDto>>> GetBooksAsync()
 }
 ```
 
-# 获取父子关系的资源
+# 十三、获取父子关系的资源
 1. 创建新的Controller
+* 公司的员工写入
 
+# 十四、
+
+# 十五、处理服务器端故障
+ 1. 在StartUp里修改
+``` C#
+if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+            else
+            {
+                app.UseExceptionHandler(appBuilder =>
+                {
+                    app.Run(async context =>
+                    {
+                        context.Response.StatusCode = 500;
+                        await context.Response.WriteAsync("Unexcept Error!");
+                    });
+                });
+            }
+```
+
+# 十六、HTTP HEAD
+1. [HttpHead]
+
+# 十七、过滤和搜索
+
+
+# 十九、查询参数
+1. 新建文件夹 DtoParameters
+2. 建立类BookDtoParameters
+3. [FormQuery]
+
+
+# 二十、安全性和幂等性
 
 
