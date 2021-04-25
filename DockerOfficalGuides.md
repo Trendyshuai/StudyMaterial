@@ -80,5 +80,57 @@ docker run -dp 80:80 docker/getting-started
 
 # 3. Upadate the application
 
+* 当我们需求改变时。
 
+## Update the source code
 
+* using the same command.
+* appear error.
+
+## Replace the old container
+
+* we need to stop the container before remove it.
+
+## Remove a container using the CLI
+
+* Get the ID of the container by using the ` docker ps ` command.
+``` Docker
+docker ps
+```
+* Use the ` docker stop ` command to stop the container.
+``` Docker
+# Swap out <the-container-id> with the ID from docker ps
+docker stop <the-container-id>
+```
+* Remove it by using ` docker ps ` command.
+``` Docker
+docker rm <the-container-id>
+```
+> Tip
+> ``` Docker
+> docker rm -f <the-container-id>
+> ```
+> You can adding the "force" flag.
+
+## Remove a container using the Docker Dashboard
+
+* Skip
+
+## Start he updated app container
+
+* Skip
+
+# 4. Share the application
+
+## Create the repo
+* sign in the Docker Hub
+* create the reop
+
+## Push the image
+``` Docker
+$ docker push docker/getting-started
+The push refers to repository [docker.io/docker/getting-started]
+An image does not exist locally with the tag: docker/getting-started
+```
+
+# 5. Persist the DB
