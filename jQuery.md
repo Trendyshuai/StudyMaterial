@@ -119,41 +119,5 @@ Syntax:
 * [Documentation about animate method ](https://www.w3schools.com/jquery/jquery_animate.asp)
 
 
-## jQuery The stop() Method
-
-> The jQuery ` stop() ` method is used to stop an animation or effect before it is finished.
-
-## jQuery Callback Functions
-
-Syntax:
-
-* ` $(selector).hide(speed,callback); `
-
-<b>Example with Callback:</b>
-
-``` JavaScript
-$("button").click(function(){
-  $("p").hide("slow", function(){
-    alert("The paragraph is now hidden");
-  });
-});
-```
-<b>Example without Callback:</b>
-``` JavaScript
-$("button").click(function(){
-  $("p").hide(1000);
-  alert("The paragraph is now hidden");
-});
-```
-## jQuery - AJAX Introduction
-
-* [AJAX Tutorial Link](https://www.w3schools.com/xml/ajax_intro.asp)
-
-> AJAX = Asynchronous JavaScript and XML.
-
-> AJAX is the art of exchanging data with a server, and updating parts of a web page - without reloading the whole page.
-
-> With the jQuery AJAX methods, you can request text, HTML, XML, or JSON from a remote server using both HTTP Get and HTTP Post - And you can load the external data directly into the selected HTML elements of your web page!
-
 
 
