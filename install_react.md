@@ -47,6 +47,12 @@ Config file in <u>C:\Users\\**USERNAME**\\.npmrc</u>
 registry=https://registry.npmmirror.com
 ```
 
+or, use command line to set proxy.
+
+```
+npm config set registry https://registry.npmmirror.com/
+```
+
 If you used the proxy of company.
 
 you need append this text in .npmrc
